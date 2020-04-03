@@ -32,9 +32,9 @@ def _custom_format(record):
            ' | ' \
            '<level>{message}</level>' \
            ' | ' \
-           '<fg #666>{extra[stack]}</>\n'
+           '<fg #666>{extra[stack]}</>{exception}\n'
 
 
 def add_log_trace():
-    # logger.remove()
+    logger.remove()
     logger.add(sys.stderr, format=_custom_format)
