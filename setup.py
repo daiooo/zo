@@ -1,7 +1,7 @@
 from importlib.machinery import SourceFileLoader
+from setuptools import setup, find_packages
 
-from setuptools import setup
-
+print(find_packages())
 # avoid loading the package before requirements are installed:
 version = SourceFileLoader('version', 'zo/version.py').load_module()
 setup(
@@ -19,7 +19,8 @@ setup(
     author_email='zo@dai3.com',
     url='https://github.com/daiooo/zo',
     license='',
-    packages=['zo'],
+    packages=find_packages(exclude=["tests.*", "tests"]),
+    # namespace_packages=['zo'],
     python_requires='>=3.7',
     zip_safe=False,
     install_requires=[
