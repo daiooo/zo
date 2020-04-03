@@ -1,0 +1,10 @@
+-r tests/requirements.txt
+munch
+loguru
+fastapi
+uvicorn
+pytest
+pyssdb
+db3
+pillow
+requests
